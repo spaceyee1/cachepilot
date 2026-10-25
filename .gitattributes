@@ -1,0 +1,2 @@
+# Preserve exact source bytes; the delivered manifest includes byte hashes.
+* -text

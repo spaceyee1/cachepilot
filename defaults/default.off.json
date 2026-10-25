@@ -1,0 +1,1 @@
+{"device":"off","blockSecrets":true,"tokenizer":{"backend":"estimate","cache":{"enabled":true,"maxEntries":512,"maxBytes":8388608,"ttlMs":300000}}}

@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "device": "cpu",
+  "pythonPath": "",
+  "modelPath": "",
+  "threshold": 0.97,
+  "margin": 0.02,
+  "ttlMs": 300000,
+  "maxEntries": 128,
+  "maxBytes": 8388608,
+  "timeoutMs": 60000,
+  "maxQueue": 4
+}

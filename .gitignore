@@ -1,0 +1,13 @@
+/runtime/node.exe
+/ui/*.exe
+/validation/
+/audit/
+/verification/
+/data/
+/semantic-settings.local.json
+**/__pycache__/
+*.pyc
+*.log
+/tests/.helper-tests/
+/tests/.profile-tests/
+/tests/verify-fixture-*/
