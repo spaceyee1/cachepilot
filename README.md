@@ -1,5 +1,7 @@
 # CachePilot independent review candidate
 
+Project-owned contributions: **[Apache-2.0](LICENSE)**. Third-party notices: [NOTICE](NOTICE) and [NOTICE.md](NOTICE.md).
+
 API plugin: **0.1.2-semantic.1**. Monitor: **0.1.1-ui.9**.
 The currently installed native tokenizer plugin remains **0.6.8**. These are separate component versions, not Codex versions. This candidate is not installed.
 
@@ -37,6 +39,15 @@ powershell -NoProfile -File scripts/build-monitor.ps1
 pwsh -NoProfile -File scripts/test-ui8-offline.ps1
 ```
 
-`MANIFEST.sha256.json` binds this local runnable package's product files, including its exact prebuilt binaries. Run `.\runtime\node.exe scripts/verify.mjs` on that matching complete package. A source-only checkout intentionally cannot pass that complete-package verification while binaries are absent. Recompiling .NET may also change binary bytes: a successful local build is not a match to the prebuilt release hash. Do not present a rebuilt artifact as hash-identical without measuring it. The commands above describe independent build/test steps. Hashes establish content consistency, not publisher authenticity; these project EXEs are unsigned. The UI verifies external Monitor.xaml against embedded trusted bytes before parsing or opening monitor pipes. A same-user attacker able to replace the EXE or interpreter is outside that guarantee.
+`MANIFEST.sha256.json` in this repository binds the current source files, excluding dist ZIPs. The separate Windows x64 runnable ZIP carries its own full-product manifest including the reviewed binaries. These two manifests cover different file sets. Hashes establish content consistency, not publisher authenticity; project EXEs remain unsigned. Recompiling may change binary bytes. The UI verifies Monitor.xaml against embedded trusted bytes before loading it. A same-user attacker able to replace the EXE or interpreter remains outside that guarantee.
 
 See `docs/VALIDATION.md` for this review's executed checks and explicitly unverified branches, `SECURITY.md` for threat boundaries, and `NOTICE.md` for third-party materials. Current verification is offline application testing with a process-local external-network guard, not a new full CVE scan, internet plagiarism search, or OS firewall. No real service stop/restart, disconnection, GPU inference or 8B test is included. Machine-specific service/memory diagnostics remain outside product logic; `docs/MEMORY-REVIEW.md` explains the historical estimate.
+
+
+## Downloadable delivery
+
+See [docs/DELIVERY.md](docs/DELIVERY.md) for the source and Windows x64 ZIPs.
+The product entry point is unchanged; no experimental audit backend is merged.
+GPU remains off by default. No model or provider Key is included.
+[Recent diagnostic summary](docs/DIAGNOSTICS-2026-10-26.md) is observation-only.
+Raw local audit records and machine inventories are not part of this delivery.

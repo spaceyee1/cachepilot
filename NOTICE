@@ -1,0 +1,13 @@
+CachePilot
+Copyright 2026 CachePilot contributors
+
+Project-owned contributions are licensed under the Apache License, Version 2.0.
+See LICENSE. Third-party material retains its own license and attribution.
+This notice does not establish rights to unidentified prior contributions.
+
+The Node.js license and its bundled dependency notices are preserved verbatim
+in runtime/LICENSE.node.txt. The Windows x64 runnable ZIP includes the reviewed
+Node binary; the source checkout does not. Windows/.NET are system dependencies.
+Python, model weights, CUDA and optional inference environments are not bundled.
+Their separate terms and any unresolved third-party rights remain outside this
+project license grant. See NOTICE.md for provenance and remaining limitations.

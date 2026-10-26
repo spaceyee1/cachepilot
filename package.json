@@ -3,6 +3,13 @@
   "version": "0.1.2-semantic.1",
   "private": true,
   "type": "module",
-  "engines": { "node": "^24.22.1 || ^26.12.1" },
-  "scripts": { "start": "./runtime/node.exe scripts/api-mcp.mjs", "test": "./runtime/node.exe --import ./tests/offline-guard.mjs --test tests/*.test.mjs", "verify": "./runtime/node.exe scripts/verify.mjs" }
+  "engines": {
+    "node": "^24.22.1 || ^26.12.1"
+  },
+  "scripts": {
+    "start": "./runtime/node.exe scripts/api-mcp.mjs",
+    "test": "./runtime/node.exe --import ./tests/offline-guard.mjs --test tests/*.test.mjs",
+    "verify": "./runtime/node.exe scripts/verify.mjs"
+  },
+  "license": "Apache-2.0"
 }
