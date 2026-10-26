@@ -1,15 +1,28 @@
-# Delivery 2026-10-26
+# Universal MCP delivery 2026-10-26
 
 Project-owned contributions use Apache-2.0; third-party notices remain unchanged.
-The root is the existing reviewed API0.1.2-semantic.1 / monitor0.1.1-ui.9 candidate.
-The currently installed native plugin0.6.8 is not modified by this delivery.
+The API0.1.2-semantic.1 / monitor0.1.1-ui.9 core is unchanged. Host-specific root
+manifests are removed; generic configuration is printed by scripts/mcp-config.mjs.
+See [generic MCP setup](UNIVERSAL-MCP.md). This is a host-neutral integration,
+with Windows-only production credentials/UI, not verified cross-platform support.
+The author's separately installed native tokenizer0.6.8 is not changed or bundled.
 
-- [Source ZIP](../dist/CachePilot-Apache2-source-20261026.zip): current project
+- [Universal source ZIP](../dist/CachePilot-universal-source-20261026.zip): current project
   source, tests, docs, Apache license and notices; no executable runtime.
-- [Windows x64 ZIP](../dist/CachePilot-Apache2-windows-x64-20261026.zip): the same
+- [Universal Windows x64 ZIP](../dist/CachePilot-universal-windows-x64-20261026.zip): the same
   product plus its three reviewed executables. Node26.12.1/OpenSSL3.5.9 is isolated
   inside that ZIP. Python, model weights and CUDA are not included.
 - [ZIP SHA-256 checksums](../dist/SHA256SUMS.txt).
+
+The two older CachePilot-Apache2-*-20261026.zip files remain byte-for-byte historical
+artifacts of commit15c4c7f. They contain the previous Codex-specific packaging and
+are not the current generic integration. Use the two Universal links above.
+
+File scopes: universal source ZIP96 files; runnable ZIP99 files (the same96 plus
+Node/helper/monitor executables). Their manifests contain95 and98 entries because
+each excludes itself. The repository also keeps four ZIPs and one checksum file;
+those five dist files are not inside either universal product ZIP. See the exact
+test scope and the outstanding junction-fixture failure in UNIVERSAL-MCP.md.
 
 Each ZIP has its own MANIFEST.sha256.json with an explicit file scope. Dist ZIPs
 are excluded from the source manifest to avoid recursive packaging. A source

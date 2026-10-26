@@ -1,5 +1,6 @@
 {
-  "name": "cachepilot-api-candidate",
+  "name": "cachepilot",
+  "description": "Host-neutral MCP plugin for explicit API calls, local cache reuse and usage monitoring.",
   "version": "0.1.2-semantic.1",
   "private": true,
   "type": "module",
@@ -7,9 +8,17 @@
     "node": "^24.22.1 || ^26.12.1"
   },
   "scripts": {
-    "start": "./runtime/node.exe scripts/api-mcp.mjs",
-    "test": "./runtime/node.exe --import ./tests/offline-guard.mjs --test tests/*.test.mjs",
-    "verify": "./runtime/node.exe scripts/verify.mjs"
+    "start": "node scripts/api-mcp.mjs",
+    "mcp:config": "node scripts/mcp-config.mjs",
+    "test": "node --import ./tests/offline-guard.mjs --test tests/*.test.mjs",
+    "verify": "node scripts/verify.mjs"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "cachepilot": {
+    "integration": "mcp-stdio",
+    "entry": "scripts/api-mcp.mjs",
+    "icon": "assets/icon.svg",
+    "supportedPlatform": "win32",
+    "hostSpecificManifestRequired": false
+  }
 }

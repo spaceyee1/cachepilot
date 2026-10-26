@@ -2,13 +2,8 @@
   "version": 1,
   "hashAlgorithm": "SHA-256",
   "authenticityProof": false,
-  "scope": "Current source checkout only; dist ZIPs and Git metadata excluded; no runtime binaries.",
+  "scope": "Generic MCP source checkout only; 96 files including this manifest; dist, Git metadata and binaries excluded.",
   "files": [
-    {
-      "path": ".codex-plugin/plugin.json",
-      "bytes": 907,
-      "sha256": "5968c2a4b540e1890eceb963f757f35e5d59351a559524ea884ef4f1c79398fa"
-    },
     {
       "path": ".gitattributes",
       "bytes": 84,
@@ -20,14 +15,9 @@
       "sha256": "823b9833bb45a31b0c3771260106e94f9a235709e1657aed237ffc2c6db3be19"
     },
     {
-      "path": ".mcp.json",
-      "bytes": 135,
-      "sha256": "91bfd65a16d8006113b1c82ae75dd1f4f31b1be494892d1ff3ea01a03194683b"
-    },
-    {
       "path": "API-GUIDE.md",
-      "bytes": 7298,
-      "sha256": "82ba762391c9b10aad3d6555bce919c92dc8a6cc99d1afbd781bf07bae068b52"
+      "bytes": 7617,
+      "sha256": "cb601ccdfc657f1c2a664636e3f0bf3b3f1e519700f42034e965fd10f922188d"
     },
     {
       "path": "LICENSE",
@@ -46,8 +36,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6525,
-      "sha256": "54d6984446e4075f7d3c85f03ff70b8c59a53491add91d54ac5e5f7f257137d7"
+      "bytes": 8701,
+      "sha256": "21905d2cf7476822eef126efd550fde89b45e9c00c1e277ac87869c06e2bf62f"
     },
     {
       "path": "SECURITY.md",
@@ -151,8 +141,8 @@
     },
     {
       "path": "docs/DELIVERY.md",
-      "bytes": 1428,
-      "sha256": "c6bea184d0b15e6a2cbd13aef95f014ff377e6fbadafd9857ba359f1cec6ef9b"
+      "bytes": 2362,
+      "sha256": "88902d78c37dec5e67a2de7f2d717fe49075fc485fdb24d23616000be2bce709"
     },
     {
       "path": "docs/DIAGNOSTICS-2026-10-26.md",
@@ -165,14 +155,19 @@
       "sha256": "0d30efd48e47a43d9360a9731d8eedd6dc5d254623c7583f1cefb2c2e70e7a95"
     },
     {
+      "path": "docs/UNIVERSAL-MCP.md",
+      "bytes": 4106,
+      "sha256": "cd60222e6b1c2262bb1503d5c4574f10c9186a3502ff3567673751375a14b1fe"
+    },
+    {
       "path": "docs/VALIDATION.md",
       "bytes": 3835,
       "sha256": "2ab16386c37e5ec24a7da3cb92cfe945b3af9ab6731ed3f95fdaeef7108b3f4a"
     },
     {
       "path": "package.json",
-      "bytes": 417,
-      "sha256": "817d4b95a2f641ccdb5fb931607f694ce9fc52cad3f1f69d5dcab78edece15c1"
+      "bytes": 716,
+      "sha256": "e533ee4907b15524965feb1925660bdc919ba88f63c409f8dd9862bce25008eb"
     },
     {
       "path": "runtime/LICENSE.node.txt",
@@ -203,6 +198,11 @@
       "path": "scripts/build-monitor.ps1",
       "bytes": 1251,
       "sha256": "b5a07a5ef2322408f9e78abffc28dc5e334220b41a74ca3a2711fb38fa7373d9"
+    },
+    {
+      "path": "scripts/mcp-config.mjs",
+      "bytes": 1185,
+      "sha256": "f5bc51aede0bedc34c6d08e477cd812fba2073f42d845d41aa70501101a87546"
     },
     {
       "path": "scripts/semantic_embed.py",
@@ -245,6 +245,11 @@
       "sha256": "61f77ec4821644eec3be7259a4c6122a92e0c63a962ceffffa24fa68087614c5"
     },
     {
+      "path": "tests/mcp-config.test.mjs",
+      "bytes": 7800,
+      "sha256": "5fcd9987dea032323698f0684efcbb5bda62f0b96d33bbf5fd9e320b2c499dd1"
+    },
+    {
       "path": "tests/mcp.test.mjs",
       "bytes": 3773,
       "sha256": "66189a650d6b576db3384c602274227d21df816f024135738f7c1c80948379c6"
@@ -261,8 +266,8 @@
     },
     {
       "path": "tests/package-metadata.test.mjs",
-      "bytes": 1818,
-      "sha256": "4cf4adb94d260c073401cc4c6436c515a4d7361fb132b2d821fdc96e8e802946"
+      "bytes": 2366,
+      "sha256": "df10f45021f9d19bd2619cb8e292c1ca06599cf693683f2ba5f1a8d91f11d2a3"
     },
     {
       "path": "tests/profiles.test.mjs",

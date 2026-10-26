@@ -1,5 +1,7 @@
 # API 调用与统计约定
 
+这是通用本地 stdio MCP 服务的 API 约定，不需要 `.codex-plugin` 或特定宿主 SDK。通用配置由 `scripts/mcp-config.mjs` 生成，详见 [MCP 接入](docs/UNIVERSAL-MCP.md)。生产凭据助手和透明监控窗目前仅支持 Windows；协议适配不等于各宿主和各厂商已实际验收。
+
 本候选提供 `cachepilot_api_status`、`cachepilot_api_preview`、`cachepilot_api_request`、`cachepilot_api_gateway_start/stop`、`cachepilot_api_cache_clear`。请求参数只有本地 profileId 和原生 body，不接受调用方指定 Key、鉴权头、任意 URL、文件或代理。配置来自用户的本机绑定操作；无真实宿主租户 ID、凭据代次或实际模型版本接入。
 
 0.1.2-semantic.1增加独立CPU回答缓存，规则和未覆盖项见README。只对插件内明确请求启用；网关仍为原路径。命中不发送厂商请求，返回local_semantic_cache来源，去掉历史usage并保持云端用量未测量；不得把本地命中或分词估算混入下面的厂商字段统计。未命中不改原文、不截断、不自动重试。中文仅精确复用。

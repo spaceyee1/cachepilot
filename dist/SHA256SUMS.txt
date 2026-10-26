@@ -1,2 +1,4 @@
 508d295ed205f35847a44f149976c50231c36767172232e71e30cda9e9d0ff57  CachePilot-Apache2-source-20261026.zip
 0cb005fa63d52b50ac7bb6ff872bfa4c20e80d26ca4566c14b44dba6f489d4d1  CachePilot-Apache2-windows-x64-20261026.zip
+d7bb18af4b82cbb56924566e34ddac191d6126c7ec5b2d5da9a245617da1e5be  CachePilot-universal-source-20261026.zip
+9cd87f0b41697a1f8ba7625cfdf35f5bf719b65e8c5bbb1800b13eab66a79f93  CachePilot-universal-windows-x64-20261026.zip
