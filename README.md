@@ -1,8 +1,10 @@
 # CachePilot — 通用 MCP 缓存与 API 插件
 
-CachePilot 面向支持本地 **stdio MCP** 的宿主，提供显式 API 调用、本地缓存复用与用量监控。Codex 只是可接入的宿主之一；本版本不含 `.codex-plugin` 专属包装，也不依赖 Codex SDK。不同宿主的配置位置和界面仍需按各自规范设置，未宣称全部客户端均已实测。
+CachePilot 是独立的通用 MCP API 网关与缓存组件，面向支持本地 **stdio MCP** 的宿主，提供显式 API 调用、本地缓存复用与用量监控。它不依赖群聊或插话项目。Codex 只是可接入的宿主之一；本版本不含 `.codex-plugin` 专属包装，也不依赖 Codex SDK。不同宿主的配置位置和界面仍需按各自规范设置，未宣称全部客户端均已实测。
 
-当前完整 API 绑定、凭据审批与透明框仍依赖 **Windows**（DPAPI / .NET）。通用的是宿主接入协议；macOS/Linux 的完整凭据与界面适配尚未完成。
+当前完整 API 绑定、凭据审批与透明框仍依赖 **Windows**（DPAPI / .NET）。通用的是宿主接入协议，完整 Linux/macOS 或无桌面服务端部署尚未实现；默认 `cachepilot_api_status` 也会读取 Windows profiles，不能宣称 Linux 上已能正常返回状态 JSON。
+
+最新项目边界、六项运行约束和独立验收记录见 [当前能力与约束](docs/PROJECT-BOUNDARIES.md)。历史测试与当前验证范围分别标注。
 
 ## 通用接入
 
@@ -38,11 +40,11 @@ API Token and cloud cache rate show **未测量** until actual API telemetry is 
 
 Only explicit `cachepilot_api_request` calls enter the candidate API layer. Adding/enabling its generic MCP entry is a separate user action; opening its monitor does not attach the API plugin to a host. The candidate does not intercept host chat or control any provider's server KV memory.
 
-The API configuration uses the local binding helper on an explicit click. It retains per-request local approval, bounded budgets, no automatic retry, and default `networkEnabled:false`. Do not paste a Key into chat or commit a credential store. See `API-GUIDE.md` for protocols and limits.
+The API configuration uses the local binding helper on an explicit click. It retains per-request local approval, bounded budgets, no automatic retry, and default `networkEnabled:false`. One sending task is allowed per process, without a queue; concurrent sends receive `API_BUSY`. Do not wrap it in an automatic retry queue that changes approval or budget semantics. Limits belong to the process session, not the provider account. Do not paste a Key into chat or commit a credential store. See `API-GUIDE.md` for protocols and limits.
 
-Semantic response reuse is **disabled in the distributable default configuration**. To opt in, copy `semantic-settings.json` outside the repository, fill the existing local Python/model paths, set `enabled:true`, and provide its absolute path through `CACHEPILOT_SEMANTIC_CONFIG` before MCP startup. No model or Python dependency is downloaded or bundled. Invalid or missing settings disable semantic reuse. This release's semantic encoder is CPU-only; it rejects CUDA/auto. The GPU settings button applies to the older native ranking path, not this encoder.
+Semantic response reuse is **disabled in the distributable default configuration**. Only explicit `cachepilot_api_request` tool calls can use it; the current HTTP gateway calls `request(..., false)` and bypasses semantic response reuse, even when the encoder is configured. To opt in, copy `semantic-settings.json` outside the repository, fill the existing local Python/model paths, set `enabled:true`, and provide its absolute path through `CACHEPILOT_SEMANTIC_CONFIG` before MCP startup. No model or Python dependency is downloaded or bundled. Invalid or missing settings disable semantic reuse. This release's semantic encoder is CPU-only; it rejects CUDA/auto. The GPU settings button applies to the older native ranking path, not this encoder.
 
-Semantic matching uses local all-MiniLM-L6-v2, threshold 0.97 and margin 0.02. Exact lookup precedes guards; negation, numbers, literals, URLs, time-sensitive/comparison text and non-ASCII text are excluded from approximate reuse before embedding. Chinese currently permits exact reuse only. History, roles, system instructions, tool/parameter context and locally bound profile/credential generation must remain in scope. Real host tenant identity and actual provider model revision remain **身份未核实**. Approximate similarity is not proof of answer equivalence. No 99% hit-rate or billing-saving claim is made.
+Semantic matching uses local all-MiniLM-L6-v2, threshold 0.97 and margin 0.02. Exact lookup precedes guards; negation, numbers, literals, URLs, time-sensitive/comparison text and non-ASCII text are excluded from approximate reuse before embedding. A non-ASCII last user query, including Chinese, permits exact reuse only. Scope and the canonical request envelope (system instructions, history, roles and parameters) must match; object-key sorting does not require raw HTTP-body byte identity. Context changes alter the group for English as well. Tool/image or otherwise ineligible requests may bypass response caching entirely. Do not truncate history or lower guards merely to inflate hit counts. Locally bound profile/credential generation remains in scope. Real host tenant identity and actual provider model revision remain **身份未核实**. Approximate similarity is not proof of answer equivalence. No 99% hit-rate or billing-saving claim is made.
 
 The process-local cache is bounded, expires entries, and does not persist responses to disk. Local reuse returns `sent:false` with its local source, does not replay provider usage or increment the cloud ledger. Provider cache performance and causal improvements remain **未测量**. Oversized model inputs are not truncated. Cancelling does not guarantee a provider stopped billing.
 

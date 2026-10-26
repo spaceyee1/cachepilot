@@ -1,0 +1,159 @@
+{
+  "reviewDate": "2026-10-26",
+  "reviewedSourceCommit": "a6bb9022bad9bf00e1f67261f6b59bed13f258d8",
+  "executionPlatform": "win32",
+  "runtime": {
+    "node": "26.12.1",
+    "openssl": "3.5.9"
+  },
+  "targetedRegression": {
+    "tests": 196,
+    "pass": 196,
+    "fail": 0,
+    "full386SuiteRerun": false
+  },
+  "junctionRepeats": [
+    {
+      "round": 1,
+      "exitCode": 0,
+      "counts": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fixtureEBUSY": false
+    },
+    {
+      "round": 2,
+      "exitCode": 0,
+      "counts": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fixtureEBUSY": false
+    },
+    {
+      "round": 3,
+      "exitCode": 0,
+      "counts": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fixtureEBUSY": false
+    },
+    {
+      "round": 4,
+      "exitCode": 0,
+      "counts": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fixtureEBUSY": false
+    },
+    {
+      "round": 5,
+      "exitCode": 0,
+      "counts": {
+        "tests": 1,
+        "pass": 1,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "fixtureEBUSY": false
+    }
+  ],
+  "junctionAdditionalScenarios": [
+    {
+      "mode": "ancestor-target",
+      "createError": null,
+      "created": true,
+      "assertionReached": true,
+      "lstat": {
+        "isSymbolicLink": true,
+        "isDirectory": false
+      },
+      "rejectedAs": "UNSAFE_PROFILE_PATH",
+      "cleanupError": null,
+      "targetUnchanged": true
+    },
+    {
+      "mode": "sibling-target",
+      "createError": null,
+      "created": true,
+      "assertionReached": true,
+      "lstat": {
+        "isSymbolicLink": true,
+        "isDirectory": false
+      },
+      "rejectedAs": "UNSAFE_PROFILE_PATH",
+      "cleanupError": null,
+      "targetUnchanged": true
+    },
+    {
+      "mode": "ancestor-component",
+      "createError": null,
+      "created": true,
+      "assertionReached": true,
+      "lstat": {
+        "isSymbolicLink": true,
+        "isDirectory": false
+      },
+      "rejectedAs": "UNSAFE_PROFILE_PATH",
+      "cleanupError": null,
+      "targetUnchanged": true
+    }
+  ],
+  "oldJunctionEBUSYRootCause": "unresolved",
+  "junctionCoverageLimits": [
+    "other reparse tags",
+    "directory replacement races",
+    "previously skipped XAML link paths"
+  ],
+  "baseUrlProfileBlockedCases": 14,
+  "mockDnsRejectedCases": 3,
+  "mockDnsRequestFunctionCalls": 0,
+  "validatorMismatch": [
+    {
+      "url": "https://x.onion",
+      "profile": "INVALID_PROFILE",
+      "transport": "ACCEPTED"
+    }
+  ],
+  "validatorMismatchFixed": false,
+  "ssrfBypassReproduced": false,
+  "sourceHashComparedFiles": 96,
+  "sourceChanged": [],
+  "semanticCache": {
+    "enabledByDefault": false,
+    "httpGatewayAllowsSemantic": false,
+    "semanticLanguage": "en",
+    "nonEnglishLastQueryPolicy": "exact_only",
+    "realSavingsMeasured": false
+  },
+  "linux": {
+    "dynamicAcceptance": false,
+    "defaultProfilesSupported": false,
+    "defaultStatusSupported": false
+  },
+  "gpu": "off",
+  "realKeyUsed": false,
+  "providerRequests": 0,
+  "productCodeChanged": false
+}

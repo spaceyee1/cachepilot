@@ -2,7 +2,7 @@
   "version": 1,
   "hashAlgorithm": "SHA-256",
   "authenticityProof": false,
-  "scope": "Generic MCP source checkout only; 96 files including this manifest; dist, Git metadata and binaries excluded.",
+  "scope": "Current source checkout including documentation boundary addendum; dist ZIP snapshots, Git metadata and binaries excluded.",
   "files": [
     {
       "path": ".gitattributes",
@@ -16,8 +16,8 @@
     },
     {
       "path": "API-GUIDE.md",
-      "bytes": 7617,
-      "sha256": "cb601ccdfc657f1c2a664636e3f0bf3b3f1e519700f42034e965fd10f922188d"
+      "bytes": 8278,
+      "sha256": "05a7cd4656aa8ce81314959b9084bdab8eff342add298f50c536e6078011fa8f"
     },
     {
       "path": "LICENSE",
@@ -36,13 +36,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8701,
-      "sha256": "21905d2cf7476822eef126efd550fde89b45e9c00c1e277ac87869c06e2bf62f"
+      "bytes": 9850,
+      "sha256": "714847b0ad5472bb41762772f4060067957f4f5c72c7fd95291d4552b04fdb08"
     },
     {
       "path": "SECURITY.md",
-      "bytes": 2247,
-      "sha256": "baef65b3b95965ac0a69a5b73d20f6b891ee09fa3a225ac9ffd1a19f78e63edf"
+      "bytes": 3440,
+      "sha256": "2437aa5f3561f466b50f842f0ab8cc7a9fa97b0ad00bc2652cb49e39ec3543f6"
     },
     {
       "path": "Start-Monitor.cmd",
@@ -141,8 +141,8 @@
     },
     {
       "path": "docs/DELIVERY.md",
-      "bytes": 2362,
-      "sha256": "88902d78c37dec5e67a2de7f2d717fe49075fc485fdb24d23616000be2bce709"
+      "bytes": 2801,
+      "sha256": "8d2c4c11d483d72639c99f02541a833ec32b3e90e5f9b642bc6302bae2627262"
     },
     {
       "path": "docs/DIAGNOSTICS-2026-10-26.md",
@@ -155,14 +155,24 @@
       "sha256": "0d30efd48e47a43d9360a9731d8eedd6dc5d254623c7583f1cefb2c2e70e7a95"
     },
     {
+      "path": "docs/PROJECT-BOUNDARIES.md",
+      "bytes": 5440,
+      "sha256": "e6b9efb4b677badbbf2a058765afdb437b4e2d54d5f5501b5528728830c1129c"
+    },
+    {
       "path": "docs/UNIVERSAL-MCP.md",
-      "bytes": 4106,
-      "sha256": "cd60222e6b1c2262bb1503d5c4574f10c9186a3502ff3567673751375a14b1fe"
+      "bytes": 4851,
+      "sha256": "049b867e58b7fdeaffdc9a7da69140537b8e863e8b83e88f640fc7f32063d1d3"
     },
     {
       "path": "docs/VALIDATION.md",
       "bytes": 3835,
       "sha256": "2ab16386c37e5ec24a7da3cb92cfe945b3af9ab6731ed3f95fdaeef7108b3f4a"
+    },
+    {
+      "path": "docs/boundary-review-2026-10-26.json",
+      "bytes": 3449,
+      "sha256": "0fe261079b712b228d504d6f121a686c9d375bacc1213f24caf3776afb9401cd"
     },
     {
       "path": "package.json",
